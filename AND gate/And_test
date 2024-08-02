@@ -1,0 +1,71 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002b03ebbb580 .scope module, "And_tb" "And_tb" 2 3;
+ .timescale -9 -12;
+v000002b03ebbbe00_0 .var "a", 0 0;
+v000002b03ebbbea0_0 .var "b", 0 0;
+v000002b03ebbbf40_0 .net "out", 0 0, L_000002b03ea850b0;  1 drivers
+v000002b03ea52af0_0 .var/i "output_file", 31 0;
+S_000002b03ebbb710 .scope module, "uut" "And" 2 13, 3 1 0, S_000002b03ebbb580;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "out";
+L_000002b03ebba000 .functor AND 1, v000002b03ebbbe00_0, v000002b03ebbbea0_0, C4<1>, C4<1>;
+L_000002b03ea866e0 .functor NOT 1, L_000002b03ebba000, C4<0>, C4<0>, C4<0>;
+L_000002b03ea53150 .functor AND 1, L_000002b03ea866e0, L_000002b03ea866e0, C4<1>, C4<1>;
+L_000002b03ea850b0 .functor NOT 1, L_000002b03ea53150, C4<0>, C4<0>, C4<0>;
+v000002b03ea53370_0 .net *"_ivl_0", 0 0, L_000002b03ebba000;  1 drivers
+v000002b03ebbb3a0_0 .net *"_ivl_4", 0 0, L_000002b03ea53150;  1 drivers
+v000002b03ebb9f60_0 .net "a", 0 0, v000002b03ebbbe00_0;  1 drivers
+v000002b03ebbbc20_0 .net "aNandb", 0 0, L_000002b03ea866e0;  1 drivers
+v000002b03ebbbcc0_0 .net "b", 0 0, v000002b03ebbbea0_0;  1 drivers
+v000002b03ebbbd60_0 .net "out", 0 0, L_000002b03ea850b0;  alias, 1 drivers
+    .scope S_000002b03ebbb580;
+T_0 ;
+    %vpi_call 2 24 "$dumpfile", "And.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002b03ebbb580 {0 0 0};
+    %vpi_func 2 28 "$fopen" 32, "and.out", "w" {0 0 0};
+    %store/vec4 v000002b03ea52af0_0, 0, 32;
+    %vpi_call 2 31 "$fwrite", v000002b03ea52af0_0, "|   a   |   b   |  out  |\012" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b03ebbbe00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b03ebbbea0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 34 "$fwrite", v000002b03ea52af0_0, "|   %b   |   %b   |   %b   |\012", v000002b03ebbbe00_0, v000002b03ebbbea0_0, v000002b03ebbbf40_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b03ebbbe00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b03ebbbea0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 36 "$fwrite", v000002b03ea52af0_0, "|   %b   |   %b   |   %b   |\012", v000002b03ebbbe00_0, v000002b03ebbbea0_0, v000002b03ebbbf40_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b03ebbbe00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b03ebbbea0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 38 "$fwrite", v000002b03ea52af0_0, "|   %b   |   %b   |   %b   |\012", v000002b03ebbbe00_0, v000002b03ebbbea0_0, v000002b03ebbbf40_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b03ebbbe00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b03ebbbea0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 40 "$fwrite", v000002b03ea52af0_0, "|   %b   |   %b   |   %b   |", v000002b03ebbbe00_0, v000002b03ebbbea0_0, v000002b03ebbbf40_0 {0 0 0};
+    %vpi_call 2 43 "$fclose", v000002b03ea52af0_0 {0 0 0};
+    %vpi_call 2 44 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "and_tb.v";
+    "and.v";
