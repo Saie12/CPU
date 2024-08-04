@@ -1,0 +1,50 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001a8d717af10 .scope module, "Not_tb" "Not_tb" 2 3;
+ .timescale -9 -12;
+v000001a8d7043370_0 .var "a", 0 0;
+v000001a8d7042af0_0 .net "out", 0 0, L_000001a8d7043150;  1 drivers
+v000001a8d7042b90_0 .var/i "output_file", 31 0;
+S_000001a8d717b3b0 .scope module, "uut" "Not" 2 9, 3 1 0, S_000001a8d717af10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "out";
+L_000001a8d7178ad0 .functor AND 1, v000001a8d7043370_0, v000001a8d7043370_0, C4<1>, C4<1>;
+L_000001a8d7076500 .functor NOT 1, L_000001a8d7178ad0, C4<0>, C4<0>, C4<0>;
+L_000001a8d7043150 .functor BUFZ 1, L_000001a8d7076500, C4<0>, C4<0>, C4<0>;
+v000001a8d717b0a0_0 .net *"_ivl_0", 0 0, L_000001a8d7178ad0;  1 drivers
+v000001a8d717ad30_0 .net "a", 0 0, v000001a8d7043370_0;  1 drivers
+v000001a8d717b540_0 .net "ananda", 0 0, L_000001a8d7076500;  1 drivers
+v000001a8d7178a30_0 .net "out", 0 0, L_000001a8d7043150;  alias, 1 drivers
+    .scope S_000001a8d717af10;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "Not.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001a8d717af10 {0 0 0};
+    %vpi_func 2 20 "$fopen" 32, "Not.out", "w" {0 0 0};
+    %store/vec4 v000001a8d7042b90_0, 0, 32;
+    %vpi_call 2 22 "$fwrite", v000001a8d7042b90_0, "|   a   |  out  |\012" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001a8d7043370_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 23 "$fwrite", v000001a8d7042b90_0, "|   %b   |   %b   |\012", v000001a8d7043370_0, v000001a8d7042af0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001a8d7043370_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 24 "$fwrite", v000001a8d7042b90_0, "|   %b   |   %b   |", v000001a8d7043370_0, v000001a8d7042af0_0 {0 0 0};
+    %vpi_call 2 26 "$fclose", v000001a8d7042b90_0 {0 0 0};
+    %vpi_call 2 27 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Not_tb.v";
+    "Not.v";
