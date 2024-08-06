@@ -1,0 +1,71 @@
+$date
+	Tue Aug 06 20:21:46 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module DeMux4way_tb $end
+$var wire 1 ! d $end
+$var wire 1 " c $end
+$var wire 1 # b $end
+$var wire 1 $ a $end
+$var reg 1 % din $end
+$var reg 2 & select [1:0] $end
+$var integer 32 ' output_file [31:0] $end
+$scope module uut $end
+$var wire 1 % din $end
+$var wire 2 ( select [1:0] $end
+$var reg 1 $ a $end
+$var reg 1 # b $end
+$var reg 1 " c $end
+$var reg 1 ! d $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 (
+b10000000000000000000000000000011 '
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#10
+b1 &
+b1 (
+#20
+b10 &
+b10 (
+#30
+b11 &
+b11 (
+#40
+1$
+b0 &
+b0 (
+1%
+#50
+1#
+0$
+b1 &
+b1 (
+#60
+1"
+0#
+b10 &
+b10 (
+#70
+1!
+0"
+b11 &
+b11 (
+#80
