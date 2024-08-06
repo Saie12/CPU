@@ -15,7 +15,7 @@ integer output_file;
 
 initial begin
     $dumpfile("Not.vcd");
-    $dumpvars(0, Not_tb);
+    $dumpvars(0, Not_tb);  
 
     output_file = $fopen("Not.out", "w");
 
