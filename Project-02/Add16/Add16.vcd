@@ -1,0 +1,71 @@
+$date
+	Sun Aug 11 20:14:10 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Add16_tb $end
+$var wire 16 ! out [15:0] $end
+$var wire 1 " cout $end
+$var reg 16 # a [15:0] $end
+$var reg 16 $ b [15:0] $end
+$var integer 32 % file [31:0] $end
+$scope module uut $end
+$var wire 16 & a [15:0] $end
+$var wire 16 ' b [15:0] $end
+$var wire 16 ( out [15:0] $end
+$var wire 1 " cout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 (
+b0 '
+b0 &
+b10000000000000000000000000000011 %
+b0 $
+b0 #
+0"
+b0 !
+$end
+#10
+b1111111111111111 !
+b1111111111111111 (
+b1111111111111111 $
+b1111111111111111 '
+#20
+b1111111111111110 !
+b1111111111111110 (
+1"
+b1111111111111111 #
+b1111111111111111 &
+#30
+0"
+b1111111111111111 !
+b1111111111111111 (
+b101010101010101 $
+b101010101010101 '
+b1010101010101010 #
+b1010101010101010 &
+#40
+b100001110110011 !
+b100001110110011 (
+b111111110000 $
+b111111110000 '
+b11001111000011 #
+b11001111000011 &
+#50
+b1010000110111110 !
+b1010000110111110 (
+b1001100001110110 $
+b1001100001110110 '
+b100101001000 #
+b100101001000 &
+#60

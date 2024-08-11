@@ -1,0 +1,91 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002bcf81552b0 .scope module, "Add16_tb" "Add16_tb" 2 1;
+ .timescale 0 0;
+v000002bcf8132db0_0 .var "a", 15 0;
+v000002bcf8132e50_0 .var "b", 15 0;
+v000002bcf8132ef0_0 .net "cout", 0 0, L_000002bcf8162230;  1 drivers
+v000002bcf81b4840_0 .var/i "file", 31 0;
+v000002bcf8162a50_0 .net "out", 15 0, L_000002bcf8162410;  1 drivers
+S_000002bcf8155440 .scope module, "uut" "Add16" 2 7, 3 1 0, S_000002bcf81552b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "a";
+    .port_info 1 /INPUT 16 "b";
+    .port_info 2 /OUTPUT 16 "out";
+    .port_info 3 /OUTPUT 1 "cout";
+L_000002bcf81b4930 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000002bcf81332e0_0 .net *"_ivl_10", 0 0, L_000002bcf81b4930;  1 drivers
+v000002bcf81555d0_0 .net *"_ivl_11", 16 0, L_000002bcf8161bf0;  1 drivers
+v000002bcf82a9f90_0 .net *"_ivl_3", 16 0, L_000002bcf8162af0;  1 drivers
+L_000002bcf81b48e8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000002bcf82abe70_0 .net *"_ivl_6", 0 0, L_000002bcf81b48e8;  1 drivers
+v000002bcf82abf10_0 .net *"_ivl_7", 16 0, L_000002bcf8162910;  1 drivers
+v000002bcf8132b30_0 .net "a", 15 0, v000002bcf8132db0_0;  1 drivers
+v000002bcf8132bd0_0 .net "b", 15 0, v000002bcf8132e50_0;  1 drivers
+v000002bcf8132c70_0 .net "cout", 0 0, L_000002bcf8162230;  alias, 1 drivers
+v000002bcf8132d10_0 .net "out", 15 0, L_000002bcf8162410;  alias, 1 drivers
+L_000002bcf8162230 .part L_000002bcf8161bf0, 16, 1;
+L_000002bcf8162410 .part L_000002bcf8161bf0, 0, 16;
+L_000002bcf8162af0 .concat [ 16 1 0 0], v000002bcf8132db0_0, L_000002bcf81b48e8;
+L_000002bcf8162910 .concat [ 16 1 0 0], v000002bcf8132e50_0, L_000002bcf81b4930;
+L_000002bcf8161bf0 .arith/sum 17, L_000002bcf8162af0, L_000002bcf8162910;
+    .scope S_000002bcf81552b0;
+T_0 ;
+    %vpi_call 2 16 "$dumpfile", "Add16.vcd" {0 0 0};
+    %vpi_call 2 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002bcf81552b0 {0 0 0};
+    %vpi_func 2 19 "$fopen" 32, "Add16.out", "w" {0 0 0};
+    %store/vec4 v000002bcf81b4840_0, 0, 32;
+    %vpi_call 2 23 "$fdisplay", v000002bcf81b4840_0, "|        a         |        b         |       out        |" {0 0 0};
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v000002bcf8132db0_0, 0, 16;
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v000002bcf8132e50_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 27 "$fdisplay", v000002bcf81b4840_0, "| %016b | %016b | %016b |", v000002bcf8132db0_0, v000002bcf8132e50_0, v000002bcf8162a50_0 {0 0 0};
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v000002bcf8132db0_0, 0, 16;
+    %pushi/vec4 65535, 0, 16;
+    %store/vec4 v000002bcf8132e50_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 30 "$fdisplay", v000002bcf81b4840_0, "| %016b | %016b | %016b |", v000002bcf8132db0_0, v000002bcf8132e50_0, v000002bcf8162a50_0 {0 0 0};
+    %pushi/vec4 65535, 0, 16;
+    %store/vec4 v000002bcf8132db0_0, 0, 16;
+    %pushi/vec4 65535, 0, 16;
+    %store/vec4 v000002bcf8132e50_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 33 "$fdisplay", v000002bcf81b4840_0, "| %016b | %016b | %016b |", v000002bcf8132db0_0, v000002bcf8132e50_0, v000002bcf8162a50_0 {0 0 0};
+    %pushi/vec4 43690, 0, 16;
+    %store/vec4 v000002bcf8132db0_0, 0, 16;
+    %pushi/vec4 21845, 0, 16;
+    %store/vec4 v000002bcf8132e50_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 36 "$fdisplay", v000002bcf81b4840_0, "| %016b | %016b | %016b |", v000002bcf8132db0_0, v000002bcf8132e50_0, v000002bcf8162a50_0 {0 0 0};
+    %pushi/vec4 13251, 0, 16;
+    %store/vec4 v000002bcf8132db0_0, 0, 16;
+    %pushi/vec4 4080, 0, 16;
+    %store/vec4 v000002bcf8132e50_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 39 "$fdisplay", v000002bcf81b4840_0, "| %016b | %016b | %016b |", v000002bcf8132db0_0, v000002bcf8132e50_0, v000002bcf8162a50_0 {0 0 0};
+    %pushi/vec4 2376, 0, 16;
+    %store/vec4 v000002bcf8132db0_0, 0, 16;
+    %pushi/vec4 39030, 0, 16;
+    %store/vec4 v000002bcf8132e50_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 42 "$fdisplay", v000002bcf81b4840_0, "| %016b | %016b | %016b |", v000002bcf8132db0_0, v000002bcf8132e50_0, v000002bcf8162a50_0 {0 0 0};
+    %vpi_call 2 45 "$fclose", v000002bcf81b4840_0 {0 0 0};
+    %vpi_call 2 48 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Add16_tb.v";
+    "Add16.v";
