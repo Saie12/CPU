@@ -1,0 +1,64 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001e29039be40 .scope module, "Inc16_tb" "Inc16_tb" 2 1;
+ .timescale 0 0;
+v000001e290502b30_0 .var/i "file", 31 0;
+v000001e290502bd0_0 .var "in", 15 0;
+v000001e290502c70_0 .net "out", 15 0, L_000001e290502d10;  1 drivers
+S_000001e2905251b0 .scope module, "uut" "Inc16" 2 6, 3 1 0, S_000001e29039be40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "in";
+    .port_info 1 /OUTPUT 16 "out";
+L_000001e29057cfd8 .functor BUFT 1, C4<0000000000000001>, C4<0>, C4<0>, C4<0>;
+v000001e2905032e0_0 .net/2u *"_ivl_0", 15 0, L_000001e29057cfd8;  1 drivers
+v000001e290525340_0 .net "in", 15 0, v000001e290502bd0_0;  1 drivers
+v000001e290539bc0_0 .net "out", 15 0, L_000001e290502d10;  alias, 1 drivers
+L_000001e290502d10 .arith/sum 16, v000001e290502bd0_0, L_000001e29057cfd8;
+    .scope S_000001e29039be40;
+T_0 ;
+    %vpi_call 2 15 "$dumpfile", "Inc16.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001e29039be40 {0 0 0};
+    %vpi_func 2 18 "$fopen" 32, "Inc16.out", "w" {0 0 0};
+    %store/vec4 v000001e290502b30_0, 0, 32;
+    %vpi_call 2 22 "$fdisplay", v000001e290502b30_0, "|        in        |       out        |" {0 0 0};
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v000001e290502bd0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 26 "$fdisplay", v000001e290502b30_0, "| %016b | %016b |", v000001e290502bd0_0, v000001e290502c70_0 {0 0 0};
+    %pushi/vec4 1, 0, 16;
+    %store/vec4 v000001e290502bd0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 29 "$fdisplay", v000001e290502b30_0, "| %016b | %016b |", v000001e290502bd0_0, v000001e290502c70_0 {0 0 0};
+    %pushi/vec4 65535, 0, 16;
+    %store/vec4 v000001e290502bd0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 32 "$fdisplay", v000001e290502b30_0, "| %016b | %016b |", v000001e290502bd0_0, v000001e290502c70_0 {0 0 0};
+    %pushi/vec4 32767, 0, 16;
+    %store/vec4 v000001e290502bd0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 35 "$fdisplay", v000001e290502b30_0, "| %016b | %016b |", v000001e290502bd0_0, v000001e290502c70_0 {0 0 0};
+    %pushi/vec4 43690, 0, 16;
+    %store/vec4 v000001e290502bd0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 38 "$fdisplay", v000001e290502b30_0, "| %016b | %016b |", v000001e290502bd0_0, v000001e290502c70_0 {0 0 0};
+    %pushi/vec4 21845, 0, 16;
+    %store/vec4 v000001e290502bd0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 41 "$fdisplay", v000001e290502b30_0, "| %016b | %016b |", v000001e290502bd0_0, v000001e290502c70_0 {0 0 0};
+    %vpi_call 2 44 "$fclose", v000001e290502b30_0 {0 0 0};
+    %vpi_call 2 47 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Inc16_tb.v";
+    "Inc16.v";
