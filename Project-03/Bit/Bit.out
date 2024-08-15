@@ -1,0 +1,6 @@
+Time: 10000, Load: 1, In: 1, Out: 1
+Time: 20000, Load: 0, In: 1, Out: 1
+Time: 30000, Load: 1, In: 0, Out: 0
+Time: 40000, Load: 0, In: 0, Out: 0
+Time: 50000, Load: 1, In: 1, Out: 1
+Time: 60000, Load: 0, In: 1, Out: 1

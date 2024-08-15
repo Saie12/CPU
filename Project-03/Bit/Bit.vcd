@@ -1,0 +1,46 @@
+$date
+	Thu Aug 15 19:27:50 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Bit_tb $end
+$var wire 1 ! out $end
+$var reg 1 " in $end
+$var reg 1 # load $end
+$var integer 32 $ output_file [31:0] $end
+$scope module uut $end
+$var wire 1 " in $end
+$var wire 1 # load $end
+$var reg 1 ! out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10000000000000000000000000000011 $
+1#
+1"
+1!
+$end
+#10000
+0#
+#20000
+0!
+1#
+0"
+#30000
+0#
+#40000
+1!
+1#
+1"
+#50000
+0#
+#60000
