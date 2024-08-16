@@ -1,0 +1,97 @@
+$date
+	Fri Aug 16 21:06:04 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_ProgramCounter $end
+$var wire 16 ! out [15:0] $end
+$var reg 16 " in [15:0] $end
+$var reg 1 # inc $end
+$var reg 1 $ load $end
+$var reg 1 % reset $end
+$var integer 32 & output_file [31:0] $end
+$scope module pc $end
+$var wire 16 ' in [15:0] $end
+$var wire 1 # inc $end
+$var wire 1 $ load $end
+$var wire 1 % reset $end
+$var reg 16 ( out [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx (
+bx '
+b10000000000000000000000000000011 &
+x%
+x$
+x#
+bx "
+bx !
+$end
+#1000
+1#
+0$
+0%
+b0 "
+b0 '
+#3000
+b1000001010000101 !
+b1000001010000101 (
+0#
+1$
+b1000001010000101 "
+b1000001010000101 '
+#4000
+b1000001010000110 !
+b1000001010000110 (
+1#
+0$
+#5000
+b1000001010000101 !
+b1000001010000101 (
+0#
+1$
+#6000
+b0 !
+b0 (
+0$
+1%
+#7000
+b11000000111001 !
+b11000000111001 (
+1$
+0%
+b11000000111001 "
+b11000000111001 '
+#8000
+b11000000111010 !
+b11000000111010 (
+1#
+0$
+#9000
+b0 !
+b0 (
+0#
+1%
+#10000
+b101011011001110 !
+b101011011001110 (
+1$
+0%
+b101011011001110 "
+b101011011001110 '
+#11000
+b101011011001111 !
+b101011011001111 (
+1#
+0$
+#21000
