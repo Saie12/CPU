@@ -1,0 +1,5 @@
+Address: 000, Written Data: a5a5, Read Data: a5a5
+Address: 001, Written Data: 5a5a, Read Data: 5a5a
+Address: 000, Read Data: a5a5
+Address: 001, Read Data: 5a5a
+Address: 010, Written Data: ffff, Read Data: ffff

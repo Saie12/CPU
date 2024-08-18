@@ -1,0 +1,70 @@
+$date
+	Sun Aug 18 21:53:44 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_RAM8 $end
+$var wire 16 ! out [15:0] $end
+$var parameter 32 " ADDRESS_WIDTH $end
+$var parameter 32 # DATA_WIDTH $end
+$var reg 3 $ address [2:0] $end
+$var reg 16 % in [15:0] $end
+$var reg 1 & load $end
+$var integer 32 ' output_file [31:0] $end
+$scope module uut $end
+$var wire 3 ( address [2:0] $end
+$var wire 16 ) in [15:0] $end
+$var wire 1 & load $end
+$var reg 16 * out [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b10000 #
+b11 "
+$end
+#0
+$dumpvars
+b1010010110100101 *
+b1010010110100101 )
+b0 (
+b10000000000000000000000000000011 '
+1&
+b1010010110100101 %
+b0 $
+b1010010110100101 !
+$end
+#10000
+b101101001011010 !
+b101101001011010 *
+b101101001011010 %
+b101101001011010 )
+b1 $
+b1 (
+1&
+#20000
+b1010010110100101 !
+b1010010110100101 *
+b0 $
+b0 (
+0&
+#30000
+b101101001011010 !
+b101101001011010 *
+b1 $
+b1 (
+#40000
+b1111111111111111 !
+b1111111111111111 *
+1&
+b1111111111111111 %
+b1111111111111111 )
+b10 $
+b10 (
+#50000
+0&
