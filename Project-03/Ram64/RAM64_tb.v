@@ -3,7 +3,7 @@
 module tb_RAM64;
 
     // Parameters
-    parameter ADDRESS_WIDTH = 6; // 3 bits for 8 addresses
+    parameter ADDRESS_WIDTH = 6; // 6 bits for 64 addresses
     parameter DATA_WIDTH = 16;    // 16 bits for data
 
     // Inputs
