@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "assemble",
+            "type": "shell",
+            "command": "nasm",
+            "args": [
+                "-f",
+                "win64",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.obj"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "link",
+            "type": "shell",
+            "command": "link",
+            "args": [
+                "${fileDirname}\\${fileBasenameNoExtension}.obj",
+                "/SUBSYSTEM:CONSOLE",
+                "/OUT:${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": "build",
+            "dependsOn": "assemble"
+        }
+    ]
+}
