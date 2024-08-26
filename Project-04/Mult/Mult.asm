@@ -1,37 +1,26 @@
 section .data
-    R0 db 5          ; First number
-    R1 db 4          ; Second number
-    R2 db 0          ; Result storage
-    i db 1           ; Initialize i = 1
-    sum db 0         ; Initialize sum = 0
+    RAM0 dq 1      ; RAM[0] - multiplier (initialized to 1 for testing)
+    RAM1 dq 5      ; RAM[1] - multiplicand (initialized to 5 for testing)
+    RAM2 dq 0      ; RAM[2] - result
 
 section .text
-global main          ; Declare the main function as global
-extern ExitProcess   ; Import ExitProcess from kernel32.dll
+global _start
 
-main:
-    ; Start of the loop
-LOOP:
-    movzx rax, byte [i]  ; Load i into RAX
-    movzx rbx, byte [R1]  ; Load R1 into RBX
-    cmp rax, rbx          ; Compare i with R1
-    jge STOP              ; If i >= R1, jump to STOP
+_start:
+    mov rax, [RAM0]   ; Load RAM[0] into rax
+    mov rcx, [RAM1]   ; Load RAM[1] into rcx
+    xor rbx, rbx      ; Clear rbx to use it as the sum
+    mov rdx, 0        ; Initialize i = 0
 
-    ; sum += R0
-    movzx rax, byte [sum] ; Load sum into RAX
-    movzx rbx, byte [R0]  ; Load R0 into RBX
-    add rax, rbx          ; sum += R0
-    mov [sum], al         ; Store the new sum back
+loop_start:
+    cmp rdx, rcx
+    jge done           ; If i >= RAM[1], exit loop
+    add rbx, rax       ; sum += RAM[0]
+    inc rdx            ; i++
+    jmp loop_start
 
-    ; i++
-    inc byte [i]          ; Increment i
-    jmp LOOP              ; Jump back to the start of the loop
-
-STOP:
-    ; Store result in R2
-    movzx rax, byte [sum] ; Load sum into RAX
-    mov [R2], al          ; Store sum in R2
-
-    ; Exit the program
-    mov eax, 0            ; Return code 0
-    call ExitProcess       ; Call ExitProcess to exit
+done:
+    mov [RAM2], rbx    ; Store the result in RAM[2]
+    mov rax, 60        ; syscall for exit
+    xor rdi, rdi       ; status code 0
+    syscall             ; call kernel to exit
