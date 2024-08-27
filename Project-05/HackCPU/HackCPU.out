@@ -1,0 +1,4 @@
+PC:    1 , A:    1 , D:    0 , outM:    0 , addressM:    0 , writeM:0 
+PC:     2, A:     1, D:     6, outM:     5, addressM:     1, writeM: 1
+PC:     3, A:     1, D:     7, outM:     6, addressM:     1, writeM: 1
+PC:     1, A:     2, D:     0, outM:     0, addressM:     0, writeM: 0
