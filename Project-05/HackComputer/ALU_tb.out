@@ -1,0 +1,7 @@
+Time: 10000 | x: ff | y: f0f | zx: 0 | nx: 0 | zy: 0 | ny: 0 | f: 0 | no: 0 | out: f | zr: 0 | ng: 0
+Time: 20000 | x: ff | y: 1 | zx: 0 | nx: 0 | zy: 0 | ny: 0 | f: 1 | no: 0 | out: 100 | zr: 0 | ng: 0
+Time: 30000 | x: ff | y: f0f | zx: 1 | nx: 0 | zy: 0 | ny: 0 | f: 0 | no: 0 | out: 0 | zr: 1 | ng: 0
+Time: 40000 | x: ff | y: f0f | zx: 0 | nx: 1 | zy: 0 | ny: 0 | f: 0 | no: 0 | out: f00 | zr: 0 | ng: 0
+Time: 50000 | x: ff | y: f0f | zx: 0 | nx: 0 | zy: 1 | ny: 0 | f: 0 | no: 0 | out: 0 | zr: 1 | ng: 0
+Time: 60000 | x: ff | y: f0f | zx: 0 | nx: 0 | zy: 0 | ny: 1 | f: 0 | no: 0 | out: f0 | zr: 0 | ng: 0
+Time: 70000 | x: ff | y: f0f | zx: 0 | nx: 0 | zy: 0 | ny: 0 | f: 0 | no: 1 | out: fff0 | zr: 0 | ng: 1

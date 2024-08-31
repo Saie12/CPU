@@ -1,6 +1,6 @@
 module ALU (
-    input wire [15:0] x,          // Operand X (usually from the D register)
-    input wire [15:0] y,          // Operand Y (from A register or memory)
+    input wire [15:0] x,          // Operand X
+    input wire [15:0] y,          // Operand Y
     input wire zx,                // Zero the X input
     input wire nx,                // Negate the X input
     input wire zy,                // Zero the Y input
