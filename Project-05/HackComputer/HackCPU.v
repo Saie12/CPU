@@ -1,10 +1,13 @@
-module HackCPU (
+module HackCPU #(
+    parameter SIZE = 256
+)
+(
     input wire clk,
     input wire reset,
     input wire [15:0] inM,          // Input from memory
     input wire [15:0] instruction,  // Current instruction
     output reg [15:0] outM,         // Output to memory
-    output reg [15:0] addressM,     // Address to write to memory
+    output reg [13:0] addressM,     // Address to write to memory
     output reg writeM,              // Write enable signal
     output reg [15:0] pc,           // Program counter
     output wire [15:0] A,           // Expose A register

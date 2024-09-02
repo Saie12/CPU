@@ -1,26 +1,21 @@
 module RAM #(
-    parameter SIZE = 16*1024  // Default size is 16K words
+    parameter SIZE = 16 * 1024  // Default size
 ) (
-    input wire clk,                               // Clock input
-    input wire [$clog2(SIZE)-1:0] address,        // Address input
-    input wire [15:0] in,                         // Data input (to be written)
-    output reg [15:0] out,                        // Data output (read from RAM)
-    input wire load                               // Write enable signal
+    input wire [13:0] address,  // Address input
+    input wire [15:0] in,       // Data input
+    input wire write,           // Write enable
+    output reg [15:0] out       // Data output
 );
 
     // RAM memory array
     reg [15:0] memory [0:SIZE-1];
 
-    // Write operation (on positive clock edge if load is enabled)
-    always @(posedge clk) begin
-        if (load) begin
-            memory[address] <= in;
+    // Read or write operations
+    always @(posedge write) begin
+        if (write) begin
+            memory[address] <= in; // Write data to RAM
         end
-    end
-
-    // Read operation (asynchronous)
-    always @(*) begin
-        out = memory[address];
+        out <= memory[address];  // Read data from RAM
     end
 
 endmodule
